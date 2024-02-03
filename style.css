@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    --cellsize: 100px;
+
+}
+
+.container {
+    margin: 15vh 0;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cellsize));
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+}
+
+.cell {
+    width: var(--cellsize);
+    height: var(--cellsize);
+    background-color: lightgray;
+    border-radius: 10%;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-size: calc(var(--cellsize) * 0.5);
+    &.X, &.O {
+        cursor: not-allowed;
+    }
+}
+
+.cell.X:after {
+    content: "✕";
+}
+
+.cell.O:after {
+    content: "◎";
+}
+
+.cell.X {
+    background-color: lightblue;
+}
+.cell.O {
+    background-color: palegoldenrod;
+}
+
+#status {
+    text-align: center;
+}
